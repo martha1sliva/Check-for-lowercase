@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+int is_lowercase(const char *test_character);
+
+int main(void){
+
+    //creating string variable
+    char my_string[]= "HellO";
+        
+    printf("The array is composed of the following characters: %s\n\n", my_string);
+    
+    is_lowercase(my_string);
+
+    return 0;
+}
+
+
+int is_lowercase(const char *test_character){
+
+    char text = printf("%s contains the following:\n", test_character);
+    int i;
+    int len = strlen(test_character);
+    //Check if lowercase
+    for (i=0; i<len; i++){
+        if(test_character[i] >= 'a' && test_character[i] <= 'z'){
+            text = text + printf("%c is lowercase.\n", test_character[i]);
+        } else {
+            text = text + printf("%c is not lowercase.\n", test_character[i]);
+        }
+    }
+    return 1;
+}
